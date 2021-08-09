@@ -1,0 +1,17 @@
+#############################################################
+#  Enlarge Configs
+#############################################################
+EnlargeStrategyConfig:
+  simbert:
+    pretrain_model_path: '/pretrainedModel/chinese_simbert_L-12_H-768_A-12'   #预训练模型路径
+    index_param: 'HNSW64'       #构建索引的类型
+    high_thr: 0.9               #设置通过simbert匹配相似度得分上限
+    low_thr: 0.4                #设置通过simbert匹配相似度得分下限
+    topK: 30                    #匹配topk值
+    is_pca: False               #是否需要pca
+    vec_dim: 768                #向量维度
+    pca_dim: 256                #经过降维之后的pca维度
+    maxlen: 16
+    batch_size: 32
+    pca_save_path: 'pca.model'       #pca模型保存地址
+    index_save_path: 'faiss_HNSW64.index'   #index的保存地址
